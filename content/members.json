@@ -5,8 +5,7 @@
     "reading": "YUKI KISE",
     "role": "プロジェクトリーダー",
     "squad": "PROJECT LEADER",
-    "year": "生産工学部 2年",
-    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 2年"
   },
   {
     "id": "m2",
@@ -14,8 +13,7 @@
     "reading": "KOKI KIMIZUKA",
     "role": "テクニカルディレクター",
     "squad": "TECHNICAL DIRECTOR",
-    "year": "生産工学部 2年",
-    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 2年"
   },
   {
     "id": "m3",
@@ -23,8 +21,7 @@
     "reading": "TOUI KIKAWA",
     "role": "トラックエンジニア / サスペンション班 リーダー",
     "squad": "TRACK ENGINEER",
-    "year": "生産工学部 2年",
-    "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 2年"
   },
   {
     "id": "m4",
@@ -32,8 +29,7 @@
     "reading": "YUSUKE TSUGE",
     "role": "フレーム班 リーダー",
     "squad": "FRAME",
-    "year": "生産工学部 2年",
-    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 2年"
   },
   {
     "id": "m5",
@@ -41,8 +37,7 @@
     "reading": "KOYO UCHIDA",
     "role": "パワートレイン班 リーダー",
     "squad": "POWERTRAIN",
-    "year": "生産工学部 2年",
-    "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 2年"
   },
   {
     "id": "m6",
@@ -50,8 +45,7 @@
     "reading": "SEITARO ISHIDA",
     "role": "コックピット班 リーダー",
     "squad": "COCKPIT",
-    "year": "生産工学部 2年",
-    "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 2年"
   },
   {
     "id": "m7",
@@ -59,7 +53,6 @@
     "reading": "YUSUKE HABU",
     "role": "マネジメント班 リーダー",
     "squad": "MANAGEMENT",
-    "year": "生産工学部 4年",
-    "photo": "https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=800&h=1000&q=80&sat=-100"
+    "year": "生産工学部 4年"
   }
 ]

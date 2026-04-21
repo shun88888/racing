@@ -34,10 +34,15 @@ export function Header() {
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 md:h-20 md:px-10">
           <a
             href="#top"
-            className="flex items-center gap-2 font-display text-lg md:text-xl font-bold tracking-[0.15em]"
+            aria-label="CIT-Racing Team"
+            className="flex items-center"
           >
-            <span className="inline-block h-3 w-3 bg-racing-red" />
-            <span>CIT-RACING</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/image.png"
+              alt="CIT-Racing Team"
+              className="h-10 w-auto invert contrast-[2] md:h-12"
+            />
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">

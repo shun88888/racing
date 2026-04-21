@@ -6,10 +6,12 @@ export function Footer() {
       <div className="mx-auto max-w-[1600px]">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <div className="flex items-center gap-2 font-display text-xl font-bold tracking-[0.15em]">
-              <span className="inline-block h-3 w-3 bg-racing-red" />
-              <span>CIT-RACING</span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/image.png"
+              alt="CIT-Racing Team"
+              className="h-14 w-auto invert contrast-[2]"
+            />
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-racing-gray">
               日本大学生産工学部 学生フォーミュラチーム。2002年結成。
               2026年大会に向けて、応援してくださる方を募集しています。
