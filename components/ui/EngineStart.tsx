@@ -61,10 +61,10 @@ export function EngineStart({ onComplete }: { onComplete?: () => void }) {
           <motion.img
             src="/hero-rear.png"
             alt=""
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 1 }}
             animate={{
               opacity: phase === "launch" ? 0 : 1,
-              scale: phase === "launch" ? 0.82 : 1,
+              scale: phase === "launch" ? 0.7 : 0.85,
             }}
             transition={{
               duration: phase === "launch" ? 0.6 : 1,
