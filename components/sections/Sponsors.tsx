@@ -2,11 +2,11 @@
 
 import { FadeIn } from "@/components/ui/AnimatedText";
 import { Marquee } from "@/components/ui/Marquee";
-import { SPONSORS } from "@/lib/data";
+import { SPONSOR_MARKS, type MarkComponent } from "@/components/ui/SponsorMarks";
 
 export function Sponsors() {
-  const rowA = SPONSORS.slice(0, 7);
-  const rowB = SPONSORS.slice(7, 14);
+  const rowA = SPONSOR_MARKS.slice(0, 7);
+  const rowB = SPONSOR_MARKS.slice(7, 14);
 
   return (
     <section className="relative bg-racing-black px-0 py-24 md:py-32">
@@ -38,12 +38,12 @@ export function Sponsors() {
       <div className="mt-14 space-y-6 md:mt-20">
         <Marquee direction="left">
           {rowA.map((s) => (
-            <SponsorLogo key={s.id} name={s.name} logo={s.logo} />
+            <SponsorLogo key={s.id} name={s.name} Mark={s.Mark} />
           ))}
         </Marquee>
         <Marquee direction="right">
           {rowB.map((s) => (
-            <SponsorLogo key={s.id} name={s.name} logo={s.logo} />
+            <SponsorLogo key={s.id} name={s.name} Mark={s.Mark} />
           ))}
         </Marquee>
       </div>
@@ -63,13 +63,13 @@ export function Sponsors() {
   );
 }
 
-function SponsorLogo({ name, logo }: { name: string; logo: string }) {
+function SponsorLogo({ name, Mark }: { name: string; Mark: MarkComponent }) {
   return (
-    <div className="group relative flex h-24 w-64 shrink-0 items-center justify-center border border-white/10 bg-racing-carbon transition-all hover:border-racing-red/50 hover:bg-white/[0.03]">
-      <img
-        src={logo}
-        alt={name}
-        className="h-full w-full object-contain px-5 py-3 brightness-110 transition-transform duration-300 group-hover:scale-105"
+    <div className="group relative flex h-24 w-64 shrink-0 items-center justify-center border border-white/10 bg-racing-carbon transition-all hover:border-racing-red/50 hover:bg-white/[0.04]">
+      <Mark
+        role="img"
+        aria-label={name}
+        className="h-full w-full px-6 py-3 transition-transform duration-300 group-hover:scale-105"
       />
     </div>
   );
