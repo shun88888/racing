@@ -24,9 +24,25 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "不正なリクエスト" }, { status: 400 });
   }
 
+  if (!process.env.ADMIN_PASSWORD) {
+    return NextResponse.json(
+      { error: "サーバー設定エラー: ADMIN_PASSWORD 未設定" },
+      { status: 500 }
+    );
+  }
+
   if (!body.password || !checkPassword(body.password)) {
     recordFail(ip);
-    return NextResponse.json({ error: "パスワードが違います" }, { status: 401 });
+    return NextResponse.json(
+      {
+        error: "パスワードが違います",
+        debug: {
+          inputLen: body.password?.length ?? 0,
+          expectedLen: process.env.ADMIN_PASSWORD.length,
+        },
+      },
+      { status: 401 }
+    );
   }
 
   recordSuccess(ip);
