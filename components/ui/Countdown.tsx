@@ -33,11 +33,11 @@ function Unit({
     <div
       className={`flex flex-col items-center gap-2 ${
         wide
-          ? "min-w-[104px] md:min-w-[180px]"
-          : "min-w-[72px] md:min-w-[120px]"
+          ? "min-w-[54px] md:min-w-[180px]"
+          : "min-w-[40px] md:min-w-[120px]"
       }`}
     >
-      <div className="relative h-14 md:h-24 w-full overflow-hidden">
+      <div className="relative h-10 md:h-24 w-full overflow-hidden">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             key={value}
@@ -45,7 +45,7 @@ function Unit({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute inset-0 flex items-center justify-center font-display font-semibold tabular-nums text-racing-white text-5xl md:text-8xl"
+            className="absolute inset-0 flex items-center justify-center font-display font-semibold tabular-nums text-racing-white text-3xl md:text-8xl"
           >
             {value}
           </motion.span>
@@ -71,13 +71,13 @@ export function Countdown({ target }: { target: string | Date }) {
   }, [targetMs]);
 
   return (
-    <div className="flex items-center gap-4 md:gap-8">
+    <div className="flex items-center gap-1.5 md:gap-8">
       <Unit value={pad(parts.days, 3)} label="DAYS" wide />
-      <span className="text-racing-red text-3xl md:text-6xl font-display">:</span>
+      <span className="text-racing-red text-xl md:text-6xl font-display">:</span>
       <Unit value={pad(parts.hours)} label="HRS" />
-      <span className="text-racing-red text-3xl md:text-6xl font-display">:</span>
+      <span className="text-racing-red text-xl md:text-6xl font-display">:</span>
       <Unit value={pad(parts.minutes)} label="MIN" />
-      <span className="text-racing-red text-3xl md:text-6xl font-display">:</span>
+      <span className="text-racing-red text-xl md:text-6xl font-display">:</span>
       <Unit value={pad(parts.seconds)} label="SEC" />
     </div>
   );

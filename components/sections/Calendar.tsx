@@ -47,7 +47,7 @@ export function Calendar() {
         </div>
 
         <FadeIn delay={0.1}>
-          <div className="relative mb-20 flex justify-center rounded-sm border border-white/10 bg-racing-black p-8 md:p-16">
+          <div className="relative mb-20 flex justify-center rounded-sm border border-white/10 bg-racing-black p-4 md:p-16">
             <div className="absolute -top-px left-0 h-px w-24 bg-racing-red" />
             <div className="absolute -bottom-px right-0 h-px w-24 bg-racing-red" />
             <Countdown target={nextRace.date} />
