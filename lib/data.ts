@@ -16,13 +16,13 @@ export type Race = {
   status: "upcoming" | "finished";
 };
 
-export type SponsorPlan = {
-  tier: "bronze" | "silver" | "gold";
-  tierLabel: string;
-  priceRange: string;
-  tagline: string;
-  highlights: string[];
-  featured?: boolean;
+export type SupportWay = {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  examples: string[];
+  give: string[];
 };
 
 export type Stat = {
@@ -40,7 +40,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "ABOUT", href: "#about" },
   { label: "MEMBERS", href: "#members" },
   { label: "CALENDAR", href: "#calendar" },
-  { label: "SPONSORSHIP", href: "#sponsorship" },
+  { label: "SUPPORT", href: "#sponsorship" },
   { label: "CONTACT", href: "#contact" },
 ];
 
@@ -148,45 +148,72 @@ export const RACES: Race[] = [
   },
 ];
 
-export const SPONSOR_PLANS: SponsorPlan[] = [
+export const SUPPORT_WAYS: SupportWay[] = [
   {
-    tier: "bronze",
-    tierLabel: "BRONZE",
-    priceRange: "¥50,000〜",
-    tagline: "まずは応援から",
-    highlights: [
-      "公式サイトにロゴ掲載（小）",
-      "SNSにてご紹介投稿 1回",
-      "年次活動報告書の送付",
-      "感謝状の贈呈",
+    id: "financial",
+    label: "01 / FUNDING",
+    title: "活動資金のご支援",
+    description:
+      "マシン製作、大会遠征、部品購入など、チーム運営全般に充てさせていただきます。金額の大小は問いません。",
+    examples: [
+      "部品・材料費の一部補助",
+      "大会遠征（静岡・エコパ）の交通費",
+      "試験走行の会場費",
+    ],
+    give: [
+      "マシン・ピットウェアへのロゴ掲出",
+      "公式サイト・SNSでのご紹介",
+      "活動報告書のお届け",
     ],
   },
   {
-    tier: "gold",
-    tierLabel: "GOLD",
-    priceRange: "¥500,000〜",
-    tagline: "共に頂点を目指す",
-    featured: true,
-    highlights: [
-      "マシンの最も目立つ位置にロゴ掲載",
-      "公式サイト・ピットウェア・配布物すべてに大サイズ掲載",
-      "SNSにて毎戦ご紹介（年24回以上）",
-      "役員・キャプテンとの定例ミーティング",
-      "年次詳細レポート + CFD/テレメトリーデータ共有",
-      "学生エンジニアとの産学連携機会",
+    id: "material",
+    label: "02 / PARTS & TECH",
+    title: "物品・技術のご提供",
+    description:
+      "現物での協力も大歓迎です。使われていない機材・部品・素材・試作サービスなど、形を問わずご相談ください。",
+    examples: [
+      "カーボン・アルミ等の素材提供",
+      "機械加工・3Dプリント・溶接の協力",
+      "計測機器・工具の貸与",
+      "CFD / CAE ソフトのライセンス",
+    ],
+    give: [
+      "技術協力パートナーとしてご紹介",
+      "開発レポート・データの共有",
+      "学生エンジニアとの技術交流",
     ],
   },
   {
-    tier: "silver",
-    tierLabel: "SILVER",
-    priceRange: "¥200,000〜",
-    tagline: "パートナーとして走る",
-    highlights: [
-      "マシンにロゴ貼付（中サイズ）",
-      "公式サイト・配布物に中サイズ掲載",
-      "SNSにてご紹介投稿 年3回",
-      "テストデイ・大会への招待",
-      "年次活動報告会への招待",
+    id: "facility",
+    label: "03 / SPACE",
+    title: "場所・設備のご提供",
+    description:
+      "試験走行場、工場見学、展示スペースなど、学生だけでは届かない環境をお借りできたら嬉しいです。",
+    examples: [
+      "テストコース・駐車場の貸与",
+      "工場見学・実務体験の機会",
+      "展示・発表スペースの提供",
+    ],
+    give: [
+      "イベント・発表会へのご招待",
+      "活動の様子を記事・動画化してご共有",
+    ],
+  },
+  {
+    id: "mentor",
+    label: "04 / MENTORSHIP",
+    title: "メンタリング・キャリア支援",
+    description:
+      "学生の成長そのものへのご支援。技術指導、インターン機会、OB/OGネットワークなど、長期的な関わりをお願いできる方を探しています。",
+    examples: [
+      "技術レビュー・アドバイス",
+      "インターン・採用直結の接点",
+      "OB/OG ネットワークへの参画",
+    ],
+    give: [
+      "定例ミーティングでの接点",
+      "学生メンバーとの継続的な関係",
     ],
   },
 ];

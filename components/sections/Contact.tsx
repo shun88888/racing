@@ -4,11 +4,12 @@ import { FormEvent, useState } from "react";
 import { FadeIn } from "@/components/ui/AnimatedText";
 import { CONTACT_INFO } from "@/lib/data";
 
-const TIERS = [
-  { value: "bronze", label: "Bronze" },
-  { value: "silver", label: "Silver" },
-  { value: "gold", label: "Gold" },
-  { value: "custom", label: "相談したい / 未定" },
+const SUPPORT_TYPES = [
+  { value: "financial", label: "活動資金のご支援" },
+  { value: "material", label: "物品・技術協力" },
+  { value: "facility", label: "場所・設備のご提供" },
+  { value: "mentor", label: "メンタリング・キャリア支援" },
+  { value: "other", label: "まずは話を聞きたい" },
 ];
 
 export function Contact() {
@@ -46,16 +47,16 @@ export function Contact() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="font-display text-4xl font-bold leading-tight md:text-6xl">
-              共に、
+              まずは、
               <br />
-              走りませんか。
+              お話しませんか。
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-racing-white/70 md:text-base">
-              スポンサーシップに関するご質問、カスタムプランのご相談、
-              技術協力のご提案など、お気軽にお問い合わせください。
-              担当者より3営業日以内にご返信いたします。
+              ご支援のかたちは決まっていなくて大丈夫です。
+              活動へのご質問や、こんなことができそう、というご提案だけでも嬉しいです。
+              学生メンバーより3営業日以内にご返信いたします。
             </p>
           </FadeIn>
 
@@ -118,20 +119,20 @@ export function Contact() {
 
             <fieldset className="mt-6">
               <legend className="mb-3 font-display text-xs tracking-[0.3em] text-racing-gray">
-                検討プラン
+                ご支援の内容（ご希望のもの）
               </legend>
               <div className="flex flex-wrap gap-3">
-                {TIERS.map((t) => (
+                {SUPPORT_TYPES.map((t) => (
                   <label
                     key={t.value}
                     className="group inline-flex cursor-pointer items-center gap-2 border border-white/15 px-4 py-2 text-sm transition-colors has-[input:checked]:border-racing-red has-[input:checked]:bg-racing-red/10 hover:border-racing-red/60"
                   >
                     <input
                       type="radio"
-                      name="tier"
+                      name="supportType"
                       value={t.value}
                       className="sr-only"
-                      defaultChecked={t.value === "custom"}
+                      defaultChecked={t.value === "other"}
                     />
                     <span>{t.label}</span>
                   </label>

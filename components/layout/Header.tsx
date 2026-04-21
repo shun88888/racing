@@ -58,7 +58,7 @@ export function Header() {
               href="#contact"
               className="hidden md:inline-flex items-center gap-2 bg-racing-red px-5 py-2.5 font-display text-sm font-semibold tracking-[0.2em] text-racing-white transition-colors hover:bg-racing-crimson"
             >
-              スポンサー応募
+              ご相談する
               <span aria-hidden>→</span>
             </a>
 
@@ -120,7 +120,7 @@ export function Header() {
                 transition={{ duration: 0.5, delay: 0.1 + NAV_ITEMS.length * 0.06 }}
                 className="mt-6 inline-flex items-center gap-2 bg-racing-red px-6 py-3 font-display text-sm font-semibold tracking-[0.25em]"
               >
-                スポンサー応募 →
+                ご相談する →
               </motion.a>
             </div>
           </motion.div>

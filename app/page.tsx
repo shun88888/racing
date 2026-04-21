@@ -5,7 +5,7 @@ import { About } from "@/components/sections/About";
 import { Members } from "@/components/sections/Members";
 import { Stats } from "@/components/sections/Stats";
 import { Calendar } from "@/components/sections/Calendar";
-import { SponsorPlans } from "@/components/sections/SponsorPlans";
+import { Support } from "@/components/sections/Support";
 import { Sponsors } from "@/components/sections/Sponsors";
 import { Contact } from "@/components/sections/Contact";
 
@@ -19,7 +19,7 @@ export default function Home() {
         <Members />
         <Stats />
         <Calendar />
-        <SponsorPlans />
+        <Support />
         <Sponsors />
         <Contact />
       </main>

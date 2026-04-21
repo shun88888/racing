@@ -28,8 +28,8 @@ export function Sponsors() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-racing-white/70">
-              共に走ってくださるパートナー企業の皆さま。
-              あなたの企業のロゴも、ここに並ぶかもしれません。
+              日頃から応援してくださっている皆さま、本当にありがとうございます。
+              新しく関わってくださる方も、ここにお名前を並べさせてください。
             </p>
           </FadeIn>
         </div>
@@ -54,7 +54,7 @@ export function Sponsors() {
             href="#sponsorship"
             className="inline-flex items-center gap-2 font-display text-xs tracking-[0.3em] text-racing-white/70 transition-colors hover:text-racing-red"
           >
-            スポンサーシップ詳細を見る
+ご支援について詳しく
             <span aria-hidden>→</span>
           </a>
         </div>

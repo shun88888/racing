@@ -124,7 +124,7 @@ export function Hero() {
           className="mt-6 max-w-xl text-base leading-relaxed text-racing-white/80 md:text-lg"
         >
           {TEAM_MISSION.subline}。学生の手で創り、極限まで攻める。
-          共に頂点を目指すパートナー企業を募集しています。
+          一緒に走ってくださる方々を、探しています。
         </motion.p>
 
         <motion.div
@@ -137,7 +137,7 @@ export function Hero() {
             href="#sponsorship"
             className="group inline-flex items-center justify-center gap-3 bg-racing-red px-8 py-4 font-display text-sm font-semibold tracking-[0.25em] transition-colors hover:bg-racing-crimson"
           >
-            スポンサーになる
+            ご支援の相談
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a

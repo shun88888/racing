@@ -12,7 +12,7 @@ export function Footer() {
             </div>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-racing-gray">
               日本大学生産工学部 学生フォーミュラチーム。
-              2026年大会に向けて共に走るパートナーを募集中。
+              2026年大会に向けて、応援してくださる方を募集しています。
             </p>
           </div>
 
