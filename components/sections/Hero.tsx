@@ -102,7 +102,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={introDone ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-        className="pointer-events-none absolute right-[-5%] top-[15%] z-[5] hidden h-[70%] w-[58%] md:block lg:right-[-2%] lg:w-[52%]"
+        className="pointer-events-none absolute left-5 right-5 top-20 z-[5] h-[28vh] md:left-auto md:right-[-5%] md:top-[15%] md:h-[70%] md:w-[58%] lg:right-[-2%] lg:w-[52%]"
       >
         <div className="relative h-full w-full">
           <div className="absolute -left-4 top-0 z-20 h-full w-[3px] overflow-hidden bg-racing-red">
