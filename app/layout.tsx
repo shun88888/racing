@@ -17,11 +17,11 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "CIT-Racing Team | ご支援のお願い 2026",
+  title: "CIT-Racing Team",
   description:
     "日本大学生産工学部 学生フォーミュラチーム。2026年大会に向けて、応援してくださる皆さまを探しています。",
   openGraph: {
-    title: "CIT-Racing Team | ご支援のお願い 2026",
+    title: "CIT-Racing Team",
     description:
       "Push the limit. 日本大学生産工学部の学生フォーミュラチーム。応援してくださる皆さまを探しています。",
     type: "website",
