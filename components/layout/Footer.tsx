@@ -58,17 +58,6 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href={CONTACT_INFO.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="text-racing-white/70 transition-colors hover:text-racing-red"
-              >
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-                  <path d="M23 12s0-3.6-.46-5.32a2.8 2.8 0 0 0-1.98-1.98C18.8 4.2 12 4.2 12 4.2s-6.8 0-8.56.5a2.8 2.8 0 0 0-1.98 1.98C1 8.4 1 12 1 12s0 3.6.46 5.32a2.8 2.8 0 0 0 1.98 1.98C5.2 19.8 12 19.8 12 19.8s6.8 0 8.56-.5a2.8 2.8 0 0 0 1.98-1.98C23 15.6 23 12 23 12ZM9.8 15.4V8.6l5.8 3.4-5.8 3.4Z" />
-                </svg>
-              </a>
-              <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 aria-label="Email"
                 className="text-racing-white/70 transition-colors hover:text-racing-red"

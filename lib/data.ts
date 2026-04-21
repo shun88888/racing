@@ -220,9 +220,11 @@ export const SUPPORT_WAYS: SupportWay[] = [
 
 export const CONTACT_INFO = {
   email: "citracingteam@gmail.com",
-  x: "https://twitter.com/CIT_Racing_Team",
-  instagram: "https://instagram.com/citracingteam",
-  youtube: "https://youtube.com/@CIT-Racing",
+  x: "https://twitter.com/cit_racing_team",
+  xHandle: "@CIT_Racing_Team",
+  instagram: "https://www.instagram.com/citracingteam",
+  instagramHandle: "@citracingteam",
+  website: "https://citracingteam.wixsite.com/cit-racing",
   address: "〒275-8575 千葉県習志野市泉町1-2-1 日本大学生産工学部",
 };
 

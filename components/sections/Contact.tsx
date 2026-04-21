@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { FadeIn } from "@/components/ui/AnimatedText";
 import { CONTACT_INFO } from "@/lib/data";
 
@@ -12,23 +12,44 @@ const SUPPORT_TYPES = [
   { value: "other", label: "まずは話を聞きたい" },
 ];
 
-export function Contact() {
-  const [sent, setSent] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+const SUBJECT = "【CIT-Racing Team】ご支援のご相談";
 
+function buildMailto(data: Record<string, FormDataEntryValue>): string {
+  const supportLabel =
+    SUPPORT_TYPES.find((t) => t.value === data.supportType)?.label ?? "未選択";
+
+  const body = [
+    "CIT-Racing Team 御中",
+    "",
+    "はじめまして。貴チームの活動に関心があり、ご連絡いたしました。",
+    "",
+    "--- ご記入内容 ---",
+    `お名前: ${data.name ?? ""}`,
+    `ご所属: ${data.company ?? ""}`,
+    `メールアドレス: ${data.email ?? ""}`,
+    `ご支援の内容: ${supportLabel}`,
+    "",
+    "ご相談内容:",
+    String(data.message ?? ""),
+    "",
+    "--------------------",
+    "どうぞよろしくお願いいたします。",
+  ].join("\n");
+
+  const params = new URLSearchParams({ subject: SUBJECT, body });
+  return `mailto:${CONTACT_INFO.email}?${params.toString()}`;
+}
+
+export function Contact() {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitting(true);
-    const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
-
-    console.log("[Contact submission]", data);
-    setTimeout(() => {
-      setSubmitting(false);
-      setSent(true);
-      form.reset();
-    }, 700);
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    window.location.href = buildMailto(data);
   };
+
+  const quickMailto = `mailto:${CONTACT_INFO.email}?${new URLSearchParams({
+    subject: SUBJECT,
+  }).toString()}`;
 
   return (
     <section
@@ -56,7 +77,7 @@ export function Contact() {
             <p className="mt-6 max-w-md text-sm leading-relaxed text-racing-white/70 md:text-base">
               ご支援のかたちは決まっていなくて大丈夫です。
               活動へのご質問や、こんなことができそう、というご提案だけでも嬉しいです。
-              学生メンバーより3営業日以内にご返信いたします。
+              学生メンバーより順次ご返信いたします。
             </p>
           </FadeIn>
 
@@ -68,7 +89,7 @@ export function Contact() {
                 </dt>
                 <dd className="mt-1">
                   <a
-                    href={`mailto:${CONTACT_INFO.email}`}
+                    href={quickMailto}
                     className="underline-offset-4 transition-colors hover:text-racing-red hover:underline"
                   >
                     {CONTACT_INFO.email}
@@ -87,15 +108,22 @@ export function Contact() {
                 <dt className="font-display text-xs tracking-[0.3em] text-racing-gray">
                   SOCIAL
                 </dt>
-                <dd className="mt-1 flex gap-4 text-racing-white/80">
-                  <a href={CONTACT_INFO.x} target="_blank" rel="noopener noreferrer" className="hover:text-racing-red">
-                    X
+                <dd className="mt-1 flex flex-col gap-1 text-racing-white/80">
+                  <a
+                    href={CONTACT_INFO.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-racing-red"
+                  >
+                    X (Twitter) — {CONTACT_INFO.xHandle}
                   </a>
-                  <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-racing-red">
-                    Instagram
-                  </a>
-                  <a href={CONTACT_INFO.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-racing-red">
-                    YouTube
+                  <a
+                    href={CONTACT_INFO.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-racing-red"
+                  >
+                    Instagram — {CONTACT_INFO.instagramHandle}
                   </a>
                 </dd>
               </div>
@@ -110,11 +138,21 @@ export function Contact() {
           >
             <div className="absolute -top-px left-0 h-px w-24 bg-racing-red" />
 
+            <p className="mb-6 text-xs leading-relaxed text-racing-gray">
+              下のフォームにご記入後、「メールで送信」ボタンを押すと、
+              お使いのメールソフトが開き、入力内容が自動で差し込まれます。
+              そのまま送信いただければ、私たちに届きます。
+            </p>
+
             <div className="grid gap-6 md:grid-cols-2">
               <Field label="お名前" name="name" required />
-              <Field label="会社名 / 団体名" name="company" required />
-              <Field label="メールアドレス" name="email" type="email" required />
-              <Field label="電話番号（任意）" name="phone" type="tel" />
+              <Field label="会社名 / ご所属" name="company" />
+              <Field
+                label="メールアドレス"
+                name="email"
+                type="email"
+                required
+              />
             </div>
 
             <fieldset className="mt-6">
@@ -157,26 +195,23 @@ export function Contact() {
 
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-racing-gray">
-                送信をもってプライバシーポリシーに同意したものとみなします。
+                お使いの環境でメールソフトが開かない場合は、
+                <a
+                  href={quickMailto}
+                  className="text-racing-white underline-offset-2 hover:text-racing-red hover:underline"
+                >
+                  {CONTACT_INFO.email}
+                </a>
+                まで直接ご連絡ください。
               </p>
               <button
                 type="submit"
-                disabled={submitting}
-                className="group inline-flex items-center justify-center gap-3 bg-racing-red px-8 py-4 font-display text-sm font-semibold tracking-[0.25em] transition-colors hover:bg-racing-crimson disabled:opacity-60"
+                className="group inline-flex shrink-0 items-center justify-center gap-3 bg-racing-red px-8 py-4 font-display text-sm font-semibold tracking-[0.25em] transition-colors hover:bg-racing-crimson"
               >
-                {submitting ? "送信中..." : "送信する"}
+                メールで送信
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </button>
             </div>
-
-            {sent && (
-              <div
-                role="status"
-                className="mt-6 border border-racing-red/50 bg-racing-red/10 p-4 text-sm"
-              >
-                お問い合わせを受け付けました。3営業日以内にご返信いたします。
-              </div>
-            )}
           </form>
         </FadeIn>
       </div>
