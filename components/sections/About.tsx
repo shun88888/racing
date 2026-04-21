@@ -63,9 +63,17 @@ export function About() {
             >
               <span
                 aria-hidden
-                className="flex h-10 w-10 shrink-0 items-center justify-center border border-racing-red bg-racing-red/10 font-display text-racing-red transition-colors group-hover:bg-racing-red group-hover:text-racing-black"
+                className="flex h-10 w-10 shrink-0 items-center justify-center border border-racing-red bg-racing-red/10 text-racing-red transition-colors group-hover:bg-racing-red group-hover:text-racing-black"
               >
-                ▶
+                <svg
+                  viewBox="0 0 10 12"
+                  width="10"
+                  height="12"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M0 0 L10 6 L0 12 Z" />
+                </svg>
               </span>
               <span className="flex flex-col">
                 <span className="font-display text-[10px] tracking-[0.35em] text-racing-red">
