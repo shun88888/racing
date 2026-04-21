@@ -11,7 +11,7 @@ export function Footer() {
               <span>CIT-RACING</span>
             </div>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-racing-gray">
-              日本大学生産工学部 学生フォーミュラチーム。
+              日本大学生産工学部 学生フォーミュラチーム。2002年結成。
               2026年大会に向けて、応援してくださる方を募集しています。
             </p>
           </div>

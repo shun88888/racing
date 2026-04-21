@@ -51,7 +51,7 @@ export function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex flex-col items-center gap-3 bg-racing-black px-4 py-10 md:py-16"
+              className="flex flex-col items-center gap-3 bg-racing-black px-4 py-10 text-center md:py-16"
             >
               <div className="font-display text-5xl font-bold text-racing-white tabular-nums md:text-7xl lg:text-8xl">
                 <CountUp value={s.value} suffix={s.suffix} />
@@ -59,6 +59,9 @@ export function Stats() {
               <div className="font-display text-xs tracking-[0.3em] text-racing-gray md:text-sm">
                 {s.label}
               </div>
+              {s.note && (
+                <div className="text-xs text-racing-white/50">{s.note}</div>
+              )}
             </motion.div>
           ))}
         </div>

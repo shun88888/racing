@@ -2,11 +2,17 @@
 
 import { FadeIn } from "@/components/ui/AnimatedText";
 import { Marquee } from "@/components/ui/Marquee";
-import { SPONSOR_MARKS, type MarkComponent } from "@/components/ui/SponsorMarks";
+import {
+  SPONSOR_LOGOS,
+  WordmarkSVG,
+  type SponsorMark,
+} from "@/components/ui/SponsorWordmark";
+import { SPECIAL_THANKS } from "@/lib/data";
 
 export function Sponsors() {
-  const rowA = SPONSOR_MARKS.slice(0, 7);
-  const rowB = SPONSOR_MARKS.slice(7, 14);
+  const half = Math.ceil(SPONSOR_LOGOS.length / 2);
+  const rowA = SPONSOR_LOGOS.slice(0, half);
+  const rowB = SPONSOR_LOGOS.slice(half);
 
   return (
     <section className="relative bg-racing-black px-0 py-24 md:py-32">
@@ -27,9 +33,9 @@ export function Sponsors() {
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-racing-white/70">
-              日頃から応援してくださっている皆さま、本当にありがとうございます。
-              新しく関わってくださる方も、ここにお名前を並べさせてください。
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-racing-white/70">
+              動力系から開発ツール、素材・制動・冷却まで——
+              各領域の企業の皆さまに、資金・物品・技術でご支援いただいています。
             </p>
           </FadeIn>
         </div>
@@ -37,39 +43,79 @@ export function Sponsors() {
 
       <div className="mt-14 space-y-6 md:mt-20">
         <Marquee direction="left">
-          {rowA.map((s) => (
-            <SponsorLogo key={s.id} name={s.name} Mark={s.Mark} />
+          {rowA.map((m) => (
+            <SponsorBox key={m.id} mark={m} />
           ))}
         </Marquee>
         <Marquee direction="right">
-          {rowB.map((s) => (
-            <SponsorLogo key={s.id} name={s.name} Mark={s.Mark} />
+          {rowB.map((m) => (
+            <SponsorBox key={m.id} mark={m} />
           ))}
         </Marquee>
       </div>
 
-      <FadeIn delay={0.2}>
-        <div className="mt-16 text-center">
-          <a
-            href="#sponsorship"
-            className="inline-flex items-center gap-2 font-display text-xs tracking-[0.3em] text-racing-white/70 transition-colors hover:text-racing-red"
-          >
-ご支援について詳しく
-            <span aria-hidden>→</span>
-          </a>
+      <div className="mt-16 px-5 md:mt-20 md:px-10">
+        <div className="mx-auto max-w-[1600px]">
+          <FadeIn>
+            <div className="relative overflow-hidden border border-white/10 bg-racing-carbon p-8 md:p-10">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-racing-red/[0.08] blur-3xl"
+              />
+              <div className="relative flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <div className="font-display text-[11px] tracking-[0.35em] text-racing-red">
+                    SPECIAL THANKS
+                  </div>
+                  <h3 className="mt-3 font-display text-2xl font-bold tracking-wide">
+                    いつも支えてくださる皆さまへ
+                  </h3>
+                </div>
+                <p className="max-w-md text-sm leading-relaxed text-racing-white/70">
+                  活動場所、設備、そしてOB・OGの技術的助言が、私たちの挑戦を支えています。
+                </p>
+              </div>
+              <ul className="relative mt-6 grid gap-2 text-sm text-racing-white/85 md:grid-cols-2">
+                {SPECIAL_THANKS.map((t) => (
+                  <li key={t} className="flex items-start gap-3 leading-relaxed">
+                    <span
+                      aria-hidden
+                      className="mt-2 inline-block h-1 w-3 shrink-0 bg-racing-red"
+                    />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.15}>
+            <div className="mt-14 text-center">
+              <a
+                href="#sponsorship"
+                className="inline-flex items-center gap-2 font-display text-xs tracking-[0.3em] text-racing-white/70 transition-colors hover:text-racing-red"
+              >
+                ご支援について詳しく
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+          </FadeIn>
         </div>
-      </FadeIn>
+      </div>
     </section>
   );
 }
 
-function SponsorLogo({ name, Mark }: { name: string; Mark: MarkComponent }) {
+function SponsorBox({ mark }: { mark: SponsorMark }) {
   return (
     <div className="group relative flex h-24 w-64 shrink-0 items-center justify-center border border-white/10 bg-racing-carbon transition-all hover:border-racing-red/50 hover:bg-white/[0.04]">
-      <Mark
-        role="img"
-        aria-label={name}
-        className="h-full w-full px-6 py-3 transition-transform duration-300 group-hover:scale-105"
+      <WordmarkSVG
+        mark={mark}
+        className="h-full w-full px-6 py-3 text-racing-white transition-transform duration-300 group-hover:scale-105"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-racing-red transition-transform duration-500 group-hover:scale-x-100"
       />
     </div>
   );

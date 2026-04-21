@@ -1,12 +1,14 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FadeIn } from "@/components/ui/AnimatedText";
-import { TEAM_MISSION } from "@/lib/data";
+import { VideoModal } from "@/components/ui/VideoModal";
+import { TEAM_MISSION, TEAM_VIDEO } from "@/lib/data";
 
 export function About() {
   const ref = useRef<HTMLElement>(null);
+  const [videoOpen, setVideoOpen] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -47,11 +49,33 @@ export function About() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-8 max-w-md text-base leading-relaxed text-racing-white/70 md:text-lg">
-              CIT-Racing Teamは、日本大学生産工学部の学生フォーミュラチーム。
-              毎年一台のフォーミュラマシンを設計・製造し、
+              CIT-Racing Teamは、日本大学生産工学部の学術系公認サークル。
+              2002年の結成以来、毎年一台のフォーミュラマシンを設計・製造し、
               学生フォーミュラ日本大会に参戦しています。
-              ここでの挑戦は、未来のエンジニアを育てる本物の工学実践です。
+              2025年・第23回大会ではチーム史上最高の総合18位とベスト車検賞(ICV)を獲得しました。
             </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              className="group mt-8 inline-flex items-center gap-4 border border-white/20 bg-racing-black/30 px-5 py-3 text-left transition-colors hover:border-racing-red"
+            >
+              <span
+                aria-hidden
+                className="flex h-10 w-10 shrink-0 items-center justify-center border border-racing-red bg-racing-red/10 font-display text-racing-red transition-colors group-hover:bg-racing-red group-hover:text-racing-black"
+              >
+                ▶
+              </span>
+              <span className="flex flex-col">
+                <span className="font-display text-[10px] tracking-[0.35em] text-racing-red">
+                  {TEAM_VIDEO.title}
+                </span>
+                <span className="font-display text-sm tracking-wide text-racing-white">
+                  {TEAM_VIDEO.label}
+                </span>
+              </span>
+            </button>
           </FadeIn>
         </div>
 
@@ -74,6 +98,13 @@ export function About() {
           ))}
         </div>
       </div>
+
+      <VideoModal
+        open={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        embedUrl={TEAM_VIDEO.embedUrl}
+        title={TEAM_VIDEO.title}
+      />
     </section>
   );
 }
