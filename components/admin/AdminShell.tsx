@@ -25,7 +25,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex min-h-screen bg-racing-black text-racing-white">
-      <aside className="w-56 shrink-0 border-r border-white/10 bg-racing-carbon p-6">
+      <aside className="sticky top-0 flex h-screen w-56 shrink-0 flex-col overflow-y-auto border-r border-white/10 bg-racing-carbon p-6 self-start">
         <div className="mb-8 font-display text-xs tracking-[0.3em] text-racing-red">
           CIT-RACING ADMIN
         </div>
@@ -55,7 +55,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           ログアウト
         </button>
       </aside>
-      <main className="flex-1 overflow-y-auto p-8">{children}</main>
+      <main className="flex-1 p-8">{children}</main>
       <ToastHost />
     </div>
   );

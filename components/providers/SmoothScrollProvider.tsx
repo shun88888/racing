@@ -1,11 +1,15 @@
 "use client";
 
 import { ReactNode, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (pathname?.startsWith("/admin")) return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
 
@@ -40,7 +44,7 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
       document.removeEventListener("click", onAnchorClick);
       lenis.destroy();
     };
-  }, []);
+  }, [pathname]);
 
   return <>{children}</>;
 }
