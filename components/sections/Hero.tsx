@@ -6,8 +6,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { HERO_MEDIA, TEAM_MISSION } from "@/lib/data";
+import { EngineStart } from "@/components/ui/EngineStart";
 
 const CYCLE_MS = 3000;
 
@@ -40,6 +41,11 @@ export function Hero() {
 
   const images = HERO_MEDIA.featureImages;
   const [index, setIndex] = useState(0);
+  const [introDone, setIntroDone] = useState(false);
+
+  const handleIntroComplete = useCallback(() => {
+    setIntroDone(true);
+  }, []);
 
   useEffect(() => {
     images.forEach((src) => {
@@ -49,12 +55,13 @@ export function Hero() {
   }, [images]);
 
   useEffect(() => {
+    if (!introDone) return;
     if (images.length <= 1) return;
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % images.length);
     }, CYCLE_MS);
     return () => window.clearInterval(id);
-  }, [images.length]);
+  }, [images.length, introDone]);
 
   const direction = index % 2 === 0 ? 1 : -1;
 
@@ -64,6 +71,7 @@ export function Hero() {
       ref={ref}
       className="relative flex h-screen min-h-[720px] w-full items-end overflow-hidden"
     >
+      <EngineStart onComplete={handleIntroComplete} />
       {/* Background video */}
       <motion.div
         style={{ y: bgY, scale: bgScale }}
@@ -92,7 +100,7 @@ export function Hero() {
       <motion.div
         style={{ y: imageY, rotate: imageRotate }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={introDone ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         className="pointer-events-none absolute right-[-5%] top-[15%] z-[5] hidden h-[70%] w-[58%] md:block lg:right-[-2%] lg:w-[52%]"
       >
@@ -190,7 +198,7 @@ export function Hero() {
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-4 flex items-center gap-3"
         >
@@ -202,7 +210,7 @@ export function Hero() {
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           className="font-display text-6xl font-bold leading-[0.9] tracking-tight text-racing-white md:text-[8rem] lg:text-[10rem]"
         >
@@ -211,7 +219,7 @@ export function Hero() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mt-6 max-w-xl text-base leading-relaxed text-racing-white/80 md:text-lg"
         >
@@ -221,7 +229,7 @@ export function Hero() {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={introDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 1.1 }}
           className="mt-8 flex flex-col gap-3 sm:flex-row"
         >
@@ -244,7 +252,7 @@ export function Hero() {
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={introDone ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
         className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
