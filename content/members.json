@@ -5,7 +5,9 @@
     "reading": "YUKI KISE",
     "role": "プロジェクトリーダー",
     "squad": "PROJECT LEADER",
-    "year": "生産工学部 2年"
+    "year": "生産工学部 2年",
+    "photo": "/木瀬.png",
+    "photoOffsetY": -10
   },
   {
     "id": "m2",
@@ -13,7 +15,9 @@
     "reading": "KOKI KIMIZUKA",
     "role": "テクニカルディレクター",
     "squad": "TECHNICAL DIRECTOR",
-    "year": "生産工学部 2年"
+    "year": "生産工学部 2年",
+    "photo": "/君塚.png",
+    "photoOffsetY": -10
   },
   {
     "id": "m3",
@@ -21,7 +25,9 @@
     "reading": "TOUI KIKAWA",
     "role": "トラックエンジニア / サスペンション班 リーダー",
     "squad": "TRACK ENGINEER",
-    "year": "生産工学部 2年"
+    "year": "生産工学部 2年",
+    "photo": "/木川.png",
+    "photoOffsetY": -10
   },
   {
     "id": "m4",
@@ -29,7 +35,9 @@
     "reading": "YUSUKE TSUGE",
     "role": "フレーム班 リーダー",
     "squad": "FRAME",
-    "year": "生産工学部 2年"
+    "year": "生産工学部 2年",
+    "photo": "/拓殖.png",
+    "photoOffsetY": -10
   },
   {
     "id": "m5",
@@ -37,7 +45,8 @@
     "reading": "KOYO UCHIDA",
     "role": "パワートレイン班 リーダー",
     "squad": "POWERTRAIN",
-    "year": "生産工学部 2年"
+    "year": "生産工学部 2年",
+    "photo": "/内田.png"
   },
   {
     "id": "m6",
@@ -45,7 +54,8 @@
     "reading": "SEITARO ISHIDA",
     "role": "コックピット班 リーダー",
     "squad": "COCKPIT",
-    "year": "生産工学部 2年"
+    "year": "生産工学部 2年",
+    "photo": "/石田.png"
   },
   {
     "id": "m7",
@@ -53,6 +63,7 @@
     "reading": "YUSUKE HABU",
     "role": "マネジメント班 リーダー",
     "squad": "MANAGEMENT",
-    "year": "生産工学部 4年"
+    "year": "生産工学部 4年",
+    "photo": "/土生.png"
   }
 ]

@@ -12,6 +12,7 @@ export type Member = {
   squad: string;
   year: string;
   photo?: string;
+  photoOffsetY?: number;
 };
 
 export type Race = {

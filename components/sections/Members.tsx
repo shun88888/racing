@@ -56,7 +56,9 @@ export function Members() {
                     src={m.photo}
                     alt={m.name}
                     loading="lazy"
-                    className="h-full w-full object-cover grayscale brightness-90 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100"
+                    className={`h-full w-full ${
+                      m.photoOffsetY ? "-translate-y-[15px]" : "-translate-y-[5px]"
+                    } object-cover object-top grayscale brightness-90 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100`}
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center font-display text-[10px] tracking-[0.3em] text-racing-white/30">
