@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ReactNode } from "react";
+import { ToastHost } from "./Toast";
 
 const NAV = [
   { label: "HERO 画像", href: "/admin/hero-images" },
@@ -55,6 +56,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
         </button>
       </aside>
       <main className="flex-1 overflow-y-auto p-8">{children}</main>
+      <ToastHost />
     </div>
   );
 }
