@@ -20,9 +20,23 @@ function pad(n: number, w = 2) {
   return n.toString().padStart(w, "0");
 }
 
-function Unit({ value, label }: { value: string; label: string }) {
+function Unit({
+  value,
+  label,
+  wide,
+}: {
+  value: string;
+  label: string;
+  wide?: boolean;
+}) {
   return (
-    <div className="flex flex-col items-center gap-2 min-w-[72px] md:min-w-[112px]">
+    <div
+      className={`flex flex-col items-center gap-2 ${
+        wide
+          ? "min-w-[104px] md:min-w-[180px]"
+          : "min-w-[72px] md:min-w-[120px]"
+      }`}
+    >
       <div className="relative h-14 md:h-24 w-full overflow-hidden">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
@@ -31,7 +45,7 @@ function Unit({ value, label }: { value: string; label: string }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute inset-0 flex items-center justify-center font-display font-semibold text-5xl md:text-8xl tabular-nums text-racing-white"
+            className="absolute inset-0 flex items-center justify-center font-display font-semibold tabular-nums text-racing-white text-5xl md:text-8xl"
           >
             {value}
           </motion.span>
@@ -55,8 +69,8 @@ export function Countdown({ target }: { target: string | Date }) {
   }, [targetDate]);
 
   return (
-    <div className="flex items-center gap-3 md:gap-6">
-      <Unit value={pad(parts.days, 3)} label="DAYS" />
+    <div className="flex items-center gap-4 md:gap-8">
+      <Unit value={pad(parts.days, 3)} label="DAYS" wide />
       <span className="text-racing-red text-3xl md:text-6xl font-display">:</span>
       <Unit value={pad(parts.hours)} label="HRS" />
       <span className="text-racing-red text-3xl md:text-6xl font-display">:</span>

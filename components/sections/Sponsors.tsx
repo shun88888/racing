@@ -65,8 +65,12 @@ export function Sponsors() {
 
 function SponsorLogo({ name, logo }: { name: string; logo: string }) {
   return (
-    <div className="flex h-20 w-60 shrink-0 items-center justify-center bg-racing-carbon/60 opacity-70 transition-opacity hover:opacity-100">
-      <img src={logo} alt={name} className="h-full w-full object-contain p-3" />
+    <div className="group relative flex h-24 w-64 shrink-0 items-center justify-center border border-white/5 bg-racing-carbon transition-all hover:border-racing-red/40">
+      <img
+        src={logo}
+        alt={name}
+        className="h-full w-full object-contain px-5 py-3 opacity-80 transition-opacity group-hover:opacity-100"
+      />
     </div>
   );
 }

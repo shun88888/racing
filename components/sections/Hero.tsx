@@ -14,13 +14,16 @@ export function Hero() {
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const imageRotate = useTransform(scrollYProgress, [0, 1], [0, -3]);
 
   return (
     <section
       id="top"
       ref={ref}
-      className="relative flex h-screen min-h-[640px] w-full items-end overflow-hidden"
+      className="relative flex h-screen min-h-[720px] w-full items-end overflow-hidden"
     >
+      {/* Background video */}
       <motion.div
         style={{ y: bgY, scale: bgScale }}
         className="absolute inset-0 -z-10"
@@ -41,9 +44,54 @@ export function Hero() {
           className="h-full w-full object-cover md:hidden"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-racing-black/60 via-racing-black/30 to-racing-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-racing-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-racing-black/80 via-racing-black/40 to-racing-black/70" />
       </motion.div>
 
+      {/* Foreground image — right side feature */}
+      <motion.div
+        style={{ y: imageY, rotate: imageRotate }}
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        className="pointer-events-none absolute right-[-5%] top-[15%] z-[5] hidden h-[70%] w-[58%] md:block lg:right-[-2%] lg:w-[52%]"
+      >
+        <div className="relative h-full w-full">
+          <div className="absolute -left-4 top-0 h-full w-[3px] bg-racing-red" />
+          <img
+            src={HERO_MEDIA.featureSrc}
+            alt=""
+            className="h-full w-full object-cover shadow-[0_40px_80px_-20px_rgba(225,6,0,0.4)]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-racing-black/60" />
+          <div className="absolute -right-4 bottom-0 h-[3px] w-full bg-racing-red" />
+
+          {/* Data badges overlay */}
+          <div className="absolute right-6 top-6 flex flex-col items-end gap-3 md:right-8 md:top-8">
+            <div className="flex items-center gap-2 border border-racing-red/60 bg-racing-black/70 px-3 py-1.5 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-racing-red" />
+              <span className="font-display text-[10px] tracking-[0.25em] text-racing-white">
+                LIVE ON TRACK
+              </span>
+            </div>
+            <div className="border border-white/20 bg-racing-black/70 px-3 py-1.5 backdrop-blur-sm">
+              <span className="font-display text-[10px] tracking-[0.25em] text-racing-white/70">
+                CIT-25 / PROTOTYPE
+              </span>
+            </div>
+          </div>
+
+          <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+            <div className="font-display text-xs tracking-[0.3em] text-racing-red">
+              CHASSIS
+            </div>
+            <div className="mt-1 font-display text-3xl font-bold leading-none md:text-4xl">
+              CIT-R26
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Text content */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
         className="relative z-10 mx-auto w-full max-w-[1600px] px-5 pb-20 md:px-10 md:pb-28"
@@ -64,7 +112,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-          className="font-display text-6xl font-bold leading-[0.9] tracking-tight text-racing-white md:text-[9rem] lg:text-[11rem]"
+          className="font-display text-6xl font-bold leading-[0.9] tracking-tight text-racing-white md:text-[8rem] lg:text-[10rem]"
         >
           {TEAM_MISSION.tagline}
         </motion.h1>
@@ -101,6 +149,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
