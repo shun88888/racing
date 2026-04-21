@@ -59,14 +59,16 @@ function Unit({
 }
 
 export function Countdown({ target }: { target: string | Date }) {
-  const targetDate = typeof target === "string" ? new Date(target) : target;
-  const [parts, setParts] = useState<Parts>(() => diff(targetDate));
+  const targetMs =
+    typeof target === "string" ? new Date(target).getTime() : target.getTime();
+  const [parts, setParts] = useState<Parts>(() => diff(new Date(targetMs)));
 
   useEffect(() => {
-    setParts(diff(targetDate));
-    const id = setInterval(() => setParts(diff(targetDate)), 1000);
+    const d = new Date(targetMs);
+    setParts(diff(d));
+    const id = setInterval(() => setParts(diff(d)), 1000);
     return () => clearInterval(id);
-  }, [targetDate]);
+  }, [targetMs]);
 
   return (
     <div className="flex items-center gap-4 md:gap-8">

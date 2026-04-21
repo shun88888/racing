@@ -220,7 +220,7 @@ const BRANDS: LogoBrand[] = [
         `<g fill='${W}'>
           <polygon points='20,58 36,22 52,58 46,58 36,36 26,58' />
           <text x='62' y='52' font-family='Oswald, Arial' font-size='28' font-weight='700' letter-spacing='2'>APEX</text>
-          <text x='62' y='68' font-family='Inter, Arial' font-size='9' opacity='0.7' letter-spacing='3'>MOTORS</text>
+          <text x='62' y='68' font-family='Inter, Arial' font-size='9' opacity='0.85' letter-spacing='3'>MOTORS</text>
         </g>`
       ),
   },
@@ -232,7 +232,7 @@ const BRANDS: LogoBrand[] = [
         `<g fill='${W}'>
           <text x='20' y='50' font-family='Georgia, serif' font-style='italic' font-size='32' font-weight='700'>Veloce</text>
           <rect x='20' y='55' width='94' height='2'/>
-          <text x='20' y='70' font-family='Inter, Arial' font-size='9' opacity='0.7' letter-spacing='4'>TECHNOLOGIES</text>
+          <text x='20' y='70' font-family='Inter, Arial' font-size='9' opacity='0.85' letter-spacing='4'>TECHNOLOGIES</text>
         </g>`
       ),
   },
@@ -246,7 +246,7 @@ const BRANDS: LogoBrand[] = [
           <circle cx='30' cy='40' r='6' stroke='none'/>
           <path d='M14 40 L22 40 M38 40 L46 40' stroke-width='2.5'/>
           <text x='56' y='38' font-family='Oswald, Arial' font-size='18' font-weight='600' stroke='none' letter-spacing='2'>CIRCUIT</text>
-          <text x='56' y='58' font-family='Inter, Arial' font-size='11' opacity='0.7' stroke='none' letter-spacing='3'>DYNAMICS</text>
+          <text x='56' y='58' font-family='Inter, Arial' font-size='11' opacity='0.85' stroke='none' letter-spacing='3'>DYNAMICS</text>
         </g>`
       ),
   },
@@ -270,7 +270,7 @@ const BRANDS: LogoBrand[] = [
           <path d='M20 50 L30 30 L40 50 Z'/>
           <path d='M40 50 L50 30 L60 50 Z' opacity='0.5'/>
           <text x='70' y='46' font-family='Oswald, Arial' font-size='20' font-weight='700' letter-spacing='3'>FORGE</text>
-          <text x='70' y='62' font-family='Inter, Arial' font-size='9' opacity='0.7' letter-spacing='3'>INDUSTRIES</text>
+          <text x='70' y='62' font-family='Inter, Arial' font-size='9' opacity='0.85' letter-spacing='3'>INDUSTRIES</text>
         </g>`
       ),
   },
@@ -280,8 +280,8 @@ const BRANDS: LogoBrand[] = [
     build: () =>
       svgDataUri(
         `<g fill='${W}'>
-          <text x='20' y='56' font-family='Oswald, Arial' font-size='40' font-weight='700' letter-spacing='4'>NITRO</text>
-          <text x='158' y='42' font-family='Oswald, Arial' font-size='42' font-weight='700'>+</text>
+          <text x='20' y='56' font-family='Oswald, Arial' font-size='34' font-weight='700' letter-spacing='3'>NITRO</text>
+          <text x='148' y='42' font-family='Oswald, Arial' font-size='38' font-weight='700'>+</text>
         </g>`
       ),
   },
@@ -305,7 +305,7 @@ const BRANDS: LogoBrand[] = [
           <path d='M18 50 L40 28 L60 30 L42 52 Z'/>
           <path d='M18 50 L40 28 L38 40 L22 56 Z' opacity='0.55'/>
           <text x='72' y='42' font-family='Oswald, Arial' font-size='18' font-weight='600' letter-spacing='3'>ZEROG</text>
-          <text x='72' y='60' font-family='Inter, Arial' font-size='10' opacity='0.7' letter-spacing='4'>AERODYNAMICS</text>
+          <text x='72' y='60' font-family='Inter, Arial' font-size='10' opacity='0.85' letter-spacing='4'>AERODYNAMICS</text>
         </g>`
       ),
   },
@@ -317,7 +317,7 @@ const BRANDS: LogoBrand[] = [
         `<g fill='${W}'>
           <path d='M28 20 Q22 36 30 46 Q24 42 24 50 Q22 60 32 62 Q44 62 42 48 Q50 52 46 38 Q42 32 38 24 Q36 34 30 32 Q30 24 28 20 Z'/>
           <text x='56' y='46' font-family='Oswald, Arial' font-size='24' font-weight='700' letter-spacing='2'>PYRO</text>
-          <text x='56' y='64' font-family='Inter, Arial' font-size='10' opacity='0.7' letter-spacing='4'>RACING</text>
+          <text x='56' y='64' font-family='Inter, Arial' font-size='10' opacity='0.85' letter-spacing='4'>RACING</text>
         </g>`
       ),
   },
@@ -330,7 +330,7 @@ const BRANDS: LogoBrand[] = [
           <rect x='20' y='24' width='32' height='32' fill='none' stroke-width='2'/>
           <text x='36' y='48' font-family='Georgia, serif' font-size='22' font-weight='700' stroke='none' text-anchor='middle'>P</text>
           <text x='60' y='44' font-family='Inter, Arial' font-weight='300' font-size='22' stroke='none' letter-spacing='5'>PRIMA</text>
-          <text x='60' y='60' font-family='Inter, Arial' font-size='9' opacity='0.7' stroke='none' letter-spacing='3'>LABORATORIES</text>
+          <text x='60' y='60' font-family='Inter, Arial' font-size='9' opacity='0.85' stroke='none' letter-spacing='3'>LABORATORIES</text>
         </g>`
       ),
   },
@@ -356,7 +356,7 @@ const BRANDS: LogoBrand[] = [
           <path d='M18 30 L50 30 L62 40 L50 50 L18 50 Z' opacity='0.6'/>
           <text x='22' y='46' font-family='Oswald, Arial' font-size='14' font-weight='700' letter-spacing='2' fill='%230a0a0a'>RED</text>
           <text x='72' y='38' font-family='Oswald, Arial' font-size='18' font-weight='700' letter-spacing='2'>REDLINE</text>
-          <text x='72' y='56' font-family='Inter, Arial' font-size='10' opacity='0.7' letter-spacing='5'>MACH WORKS</text>
+          <text x='72' y='56' font-family='Inter, Arial' font-size='10' opacity='0.85' letter-spacing='5'>MACH WORKS</text>
         </g>`
       ),
   },
@@ -369,7 +369,7 @@ const BRANDS: LogoBrand[] = [
           <polygon points='20,22 46,22 38,58 28,58'/>
           <polygon points='28,22 46,22 38,40 28,40' opacity='0.55'/>
           <text x='56' y='44' font-family='Oswald, Arial' font-size='22' font-weight='700' letter-spacing='3'>TITAN</text>
-          <text x='56' y='60' font-family='Inter, Arial' font-size='10' opacity='0.7' letter-spacing='5'>STEEL CO.</text>
+          <text x='56' y='60' font-family='Inter, Arial' font-size='10' opacity='0.85' letter-spacing='5'>STEEL CO.</text>
         </g>`
       ),
   },
@@ -382,7 +382,7 @@ const BRANDS: LogoBrand[] = [
           <circle cx='30' cy='40' r='14' fill='none' stroke-width='2'/>
           <circle cx='30' cy='40' r='14' fill='none' stroke-width='2' stroke-dasharray='44 44' opacity='0.5' transform='rotate(-45 30 40)'/>
           <text x='54' y='44' font-family='Inter, Arial' font-weight='500' font-size='16' stroke='none' letter-spacing='4'>QUANTUM</text>
-          <text x='54' y='58' font-family='Inter, Arial' font-size='9' opacity='0.7' stroke='none' letter-spacing='4'>DRIVE SYSTEMS</text>
+          <text x='54' y='58' font-family='Inter, Arial' font-size='9' opacity='0.85' stroke='none' letter-spacing='4'>DRIVE SYSTEMS</text>
         </g>`
       ),
   },

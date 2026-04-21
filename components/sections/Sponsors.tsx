@@ -65,11 +65,11 @@ export function Sponsors() {
 
 function SponsorLogo({ name, logo }: { name: string; logo: string }) {
   return (
-    <div className="group relative flex h-24 w-64 shrink-0 items-center justify-center border border-white/5 bg-racing-carbon transition-all hover:border-racing-red/40">
+    <div className="group relative flex h-24 w-64 shrink-0 items-center justify-center border border-white/10 bg-racing-carbon transition-all hover:border-racing-red/50 hover:bg-white/[0.03]">
       <img
         src={logo}
         alt={name}
-        className="h-full w-full object-contain px-5 py-3 opacity-80 transition-opacity group-hover:opacity-100"
+        className="h-full w-full object-contain px-5 py-3 brightness-110 transition-transform duration-300 group-hover:scale-105"
       />
     </div>
   );
