@@ -1,0 +1,45 @@
+[
+  {
+    "id": "powertrain",
+    "label": "01",
+    "title": "動力系",
+    "companies": ["HONDA", "GS YUASA"]
+  },
+  {
+    "id": "dev",
+    "label": "02",
+    "title": "開発・解析ツール",
+    "companies": ["SolidWorks", "Autodesk", "IPG Automotive"]
+  },
+  {
+    "id": "manufacturing",
+    "label": "03",
+    "title": "製造・素材",
+    "companies": ["神戸製鋼", "柘植製作所", "三五", "NOK"]
+  },
+  {
+    "id": "chassis",
+    "label": "04",
+    "title": "シャシ・制動",
+    "companies": ["NTN", "RS-R", "FCC", "日立Astemo", "グループ・エム"]
+  },
+  {
+    "id": "cooling",
+    "label": "05",
+    "title": "冷却系",
+    "companies": ["三栄", "三光ラジエター"]
+  },
+  {
+    "id": "others",
+    "label": "06",
+    "title": "機能部品・サービス",
+    "companies": [
+      "igus",
+      "Stäubli",
+      "KYOWA",
+      "ナック・ケー・エス",
+      "Mynavi Edge",
+      "トヨタレンタレース千葉"
+    ]
+  }
+]

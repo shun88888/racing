@@ -1,0 +1,58 @@
+[
+  {
+    "year": "2002",
+    "event": "FOUNDED",
+    "headline": "CIT-Racing Team 結成",
+    "detail": "日本大学生産工学部の学術系公認サークルとして発足。"
+  },
+  {
+    "year": "第6回",
+    "event": "FIRST DYNAMIC",
+    "headline": "動的審査 初出場",
+    "detail": "学生フォーミュラ日本大会の動的競技へ、チームとして初めて進出。"
+  },
+  {
+    "year": "第8回",
+    "event": "FIRST FINISH",
+    "headline": "エンデュランス 初完走",
+    "detail": "最難関の耐久走行を初めて走り切る。"
+  },
+  {
+    "year": "第14回",
+    "event": "COMEBACK",
+    "headline": "6年ぶりのエンデュランス完走",
+    "detail": "長い低迷期を経て、動的競技の主戦場に帰還。"
+  },
+  {
+    "year": "第15回",
+    "event": "AWARD",
+    "headline": "チーム史上初の全種目完走",
+    "detail": "日本自動車工業会会長賞を受賞。",
+    "highlight": true
+  },
+  {
+    "year": "第16回",
+    "event": "AWARD",
+    "headline": "2年連続の全種目完走",
+    "detail": "日本自動車工業会会長賞を連続受賞。"
+  },
+  {
+    "year": "第22回",
+    "event": "TOP 30",
+    "headline": "総合30位 / 会長賞受賞",
+    "detail": "上位常連として成績を安定させる。"
+  },
+  {
+    "year": "2025 / 第23回",
+    "event": "BEST EVER",
+    "headline": "総合18位・ベスト車検賞(ICV)受賞",
+    "detail": "チーム史上最高順位を更新。走行性能と設計精度の両面で評価された。",
+    "highlight": true
+  },
+  {
+    "year": "2026",
+    "event": "NEXT",
+    "headline": "次の自己ベストへ",
+    "detail": "2026年大会に向け、新体制で設計・製造を開始。"
+  }
+]
